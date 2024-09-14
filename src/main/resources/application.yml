@@ -1,0 +1,38 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cms
+    username: root
+    password: 1qaz0plm
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher  #解决swagger 启动 空指针错误
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis-plus:
+  mapper-locations: classpath:mappers/**/*.xml
+  type-aliases-package: com.briup.cms.bean
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+  global-config:
+    db-config:
+      logic-delete-field: deleted # 全局逻辑删除字段名
+      logic-delete-value: 1 # 逻辑已删除值
+      logic-not-delete-value: 0 # 逻辑未删除值
+      id-type: assign_id
+snowflake:
+  workerId: 1
+  datacenterId: 1
+swagger:
+  enabled: true   #开启swagger
+  base-package: com.briup.cms.web.controller   #扫描注解的包，生成API文档
+  title: 热点资讯项目
+  contact:
+    email: leng@briup.com
+    name: leng
+    url: www.briup.com
+  description: 项目开发阶段
