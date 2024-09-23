@@ -41,8 +41,11 @@ public class CodeGenerator {
                         //模糊匹配表名
                         //.likeTable(new LikeTable("manager_"))
                         //增加表匹配
-                        .addInclude("cms_slideshow")
-                        .addInclude("cms_category")
+//                        .addInclude("cms_slideshow")
+//                        .addInclude("cms_category")
+//                          .addInclude("cms_article")
+//                          .addInclude("cms_comment")
+                          .addInclude("cms_user")
                         //去掉生成实体类的前缀
                         .addTablePrefix("cms_")
                         //去掉生成字段前缀

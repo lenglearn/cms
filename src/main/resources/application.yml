@@ -12,6 +12,9 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
+  redis:
+    host: 127.0.0.1
+    port: 6379
 mybatis-plus:
   mapper-locations: classpath:mappers/**/*.xml
   type-aliases-package: com.briup.cms.bean

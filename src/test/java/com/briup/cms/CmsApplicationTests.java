@@ -7,6 +7,7 @@ import com.briup.cms.bean.basic.Category;
 import com.briup.cms.bean.excel.CategoryData;
 import com.briup.cms.dao.basic.CategoryMapper;
 import com.briup.cms.exception.CustomException;
+import com.briup.cms.service.IArticleService;
 import com.briup.cms.util.BriupBeanUtils;
 import com.briup.cms.util.ResultCode;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,8 @@ class CmsApplicationTests {
 
     @Autowired
     private CategoryMapper mapper;
+    @Autowired
+    private IArticleService service;
     @Test
     void contextLoads() {
         //只能查询出逻辑未删除的数据
@@ -60,6 +63,10 @@ class CmsApplicationTests {
         //2.获取到List<Category>
         System.out.println(categories);
         mapper.insert(categories);
+    }
+    @Test
+    public void method3(){
+
     }
 
 }
